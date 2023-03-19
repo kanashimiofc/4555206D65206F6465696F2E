@@ -1,79 +1,39 @@
 body {
-    background-color: #222222;
-    color: white;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 20px;
-    padding: 30px;
+  background-color: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 h1 {
-    font-size: 50px;
-    text-align: center;
-    margin-bottom: 50px;
+  font-size: 48px;
 }
 
 p {
-    margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 30px;
 }
 
-.tabs {
-    border-bottom: 1px solid white;
-    margin-bottom: 20px;
+button {
+  background-color: #8B0000;
+  color: white;
+  font-size: 24px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.tab {
-    margin-right: 10px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.tab.active {
-    border-bottom: 2px solid white;
-}
-
-.tabpanel {
-    display: none;
-}
-
-.tabpanel.active {
-    display: block;
-}
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-}
-
-input[type="submit"] {
-    padding: 10px;
-    font-size: 18px;
-    background-color: white;
-    color: #222222;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #f2f2f2;
+button:hover {
+  background-color: #DC143C;
+  transform: scale(1.1);
 }
