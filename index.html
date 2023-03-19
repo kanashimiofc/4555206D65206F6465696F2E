@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>RPG Page</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-      <h1>Cuidado ao entrar</h1>
-      <p>Você pode não gostar...</p>
-      <img src="img1.jpg" alt="Imagem 1">
-      <button onclick="window.location.href='index2.html'">Ir para outra página</button>
-    </div>
-  </body>
+<head>
+	<title>Anagrama - História de Fundo</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="background">
+		<div class="container">
+			<h1>Anagrama - História de Fundo</h1>
+			<p>Essa é a história de um jovem aventureiro que se perdeu em uma floresta densa e escura. Depois de horas de caminhada, ele finalmente encontrou uma pequena clareira com uma cabana antiga. O jovem entrou na cabana e encontrou um velho livro em uma prateleira empoeirada.</p>
+			<p>O livro estava escrito em um idioma desconhecido, mas o jovem notou que as palavras pareciam estar embaralhadas. Ele percebeu que era um anagrama e começou a decifrá-lo. Depois de alguns minutos, o jovem finalmente desvendou a mensagem: "Saia daqui imediatamente".</p>
+			<form>
+				<label for="resposta">Digite a resposta:</label>
+				<input type="text" id="resposta" name="resposta">
+				<button type="submit" onclick="verificarResposta()">Verificar</button>
+			</form>
+			<div id="mensagem"></div>
+		</div>
+	</div>
+<script>
+	function verificarResposta() {
+		var resposta = document.getElementById("resposta").value;
+		if (resposta.toLowerCase() === "saia daqui imediatamente") {
+			document.getElementById("mensagem").innerHTML = "Parabéns, você acertou! Redirecionando para a próxima página...";
+			window.location.href = "proxima_pagina.html";
+		} else {
+			document.getElementById("mensagem").innerHTML = "Ops, resposta incorreta. Tente novamente.";
+		}
+	}
+</script>
+</body>
 </html>
