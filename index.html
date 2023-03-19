@@ -2,79 +2,101 @@
 <html>
   <head>
     <title>Animes News</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
       body {
-        background-color: #f2f2f2;
-        font-family: Arial, sans-serif;
-      }
-
-      #header {
-        background-color: #1c1c1c;
+        font-family: 'Press Start 2P', cursive;
+        background-color: black;
         color: white;
-        padding: 10px;
-        text-align: center;
       }
-
-      #noticias {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+      
+      header {
+        background-image: url('https://example.com/header-background.jpg');
+        background-size: cover;
+        text-align: center;
         padding: 20px;
       }
-
-      .noticia {
-        width: 30%;
+      
+      h1 {
+        font-size: 48px;
         margin-bottom: 20px;
-        background-color: white;
-        border-radius: 5px;
-        box-shadow: 0px 0px 5px #888888;
-        overflow: hidden;
       }
-
-      .noticia img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
+      
+      nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
       }
-
-      .noticia h2 {
-        margin: 10px;
+      
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
         font-size: 24px;
       }
-
-      .noticia p {
-        margin: 10px;
-        font-size: 16px;
-        text-align: justify;
+      
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      article {
+        width: 400px;
+        margin: 20px;
+        background-color: #333;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      
+      article h2 {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+      
+      article p {
+        font-size: 18px;
+      }
+      
+      footer {
+        background-color: #222;
+        text-align: center;
+        padding: 20px;
+      }
+      
+      footer p {
+        font-size: 18px;
+        margin: 0;
       }
     </style>
   </head>
-
   <body>
-    <div id="header">
+    <header>
       <h1>Animes News</h1>
-    </div>
-
-    <div id="noticias">
-      <div class="noticia">
-        <img src="anime1.png" alt="Anime 1">
-        <h2>Notícia 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit, magna et rhoncus pharetra, nisi ipsum posuere erat, vel rutrum turpis libero ac libero. Fusce imperdiet sapien vel augue consequat, et tincidunt felis finibus.</p>
-      </div>
-
-      <div class="noticia">
-        <img src="anime2.png" alt="Anime 2">
-        <h2>Notícia 2</h2>
-        <p>Nullam aliquet eros nec sapien feugiat, at blandit risus tempor. Integer ac ante tincidunt, auctor velit vitae, maximus enim. Praesent commodo dui ac orci tincidunt, non imperdiet dolor semper.</p>
-      </div>
-
-      <div class="noticia">
-        <img src="anime3.png" alt="Anime 3">
-        <h2>Notícia 3</h2>
-        <p>Mauris laoreet nulla eu leo maximus, at venenatis velit accumsan. Sed eu mi eget velit eleifend molestie vitae vel enim. Praesent efficitur ex id ipsum congue, a lacinia elit rhoncus.</p>
-      </div>
-
-      <!-- Adicione mais notícias conforme necessário -->
-    </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Notícias</a>
+        <a href="#">Eventos</a>
+        <a href="#">Sobre</a>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h2>Novo lançamento de anime: "Demon Slayer"</h2>
+        <p>Recentemente foi anunciado o lançamento do novo anime "Demon Slayer". A série será transmitida pela plataforma de streaming Netflix a partir do dia 1º de abril.</p>
+      </article>
+      <article>
+        <h2>Entrevista com o criador de "One Piece"</h2>
+        <p>Em uma entrevista exclusiva para o site Animes News, Eiichiro Oda, criador do anime "One Piece", fala sobre os desafios de criar uma história que já dura mais de 20 anos.</p>
+      </article>
+      <article>
+        <h2>Evento de anime em São Paulo</h2>
+        <p>O maior evento de anime da América Latina, o Anime Friends, será realizado este ano na cidade de São Paulo. O evento contará com a presença de dubladores e cosplayers famosos, além de exibições de animes inéditos.</p>
+      </article>
+    </main>
+    <footer>
+      <p>Copyright © 2022 Animes News
+      <br>Todos os direitos reservados.</p>
+    </footer>
   </body>
 </html>
