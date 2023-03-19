@@ -2,70 +2,81 @@
 <html>
 <head>
 	<title>Comunidade de RPG</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
 	<header>
-		<h1>Comunidade de RPG</h1>
+		<div class="container">
+			<h1>Comunidade de RPG</h1>
+			<nav>
+				<ul>
+					<li><a href="#">Início</a></li>
+					<li><a href="#">Sobre</a></li>
+					<li><a href="#">Cadastro</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
-	<nav>
-		<ul>
-			<li><a href="#">Início</a></li>
-			<li><a href="#">Sobre</a></li>
-			<li><a href="#">Cadastro</a></li>
-			<li><a href="#">Login</a></li>
-		</ul>
-	</nav>
 	<main>
-		<section>
-			<h2>Bem-vindo à nossa Comunidade de RPG!</h2>
-			<p>Aqui você pode encontrar outros jogadores de RPG e participar de aventuras épicas.</p>
-		</section>
-		<section>
-			<h2>Cadastre-se</h2>
-			<form>
-				<label for="nome">Nome:</label>
-				<input type="text" id="nome" name="nome"><br>
-
-				<label for="email">E-mail:</label>
-				<input type="email" id="email" name="email"><br>
-
-				<label for="senha">Senha:</label>
-				<input type="password" id="senha" name="senha"><br>
-
-				<input type="submit" value="Cadastrar">
-			</form>
-		</section>
-		<section>
-			<h2>Login</h2>
-			<form>
-				<label for="email">E-mail:</label>
-				<input type="email" id="email" name="email"><br>
-
-				<label for="senha">Senha:</label>
-				<input type="password" id="senha" name="senha"><br>
-
-				<input type="submit" value="Entrar">
-			</form>
-		</section>
-		<section>
-			<h2>Chat Público</h2>
-			<div id="chat">
-				<p><strong>Usuário 1:</strong> Olá, tem alguém aí?</p>
-				<p><strong>Usuário 2:</strong> Sim, estou aqui!</p>
-				<p><strong>Usuário 3:</strong> Acabei de entrar, alguém quer jogar?</p>
+		<section id="banner">
+			<div class="container">
+				<h2>Bem-vindo à nossa Comunidade de RPG!</h2>
+				<p>Aqui você pode encontrar outros jogadores de RPG e participar de aventuras épicas.</p>
 			</div>
-			<form>
-				<label for="mensagem">Mensagem:</label>
-				<input type="text" id="mensagem" name="mensagem"><br>
+		</section>
+		<section id="cadastro">
+			<div class="container">
+				<h2>Cadastre-se</h2>
+				<form>
+					<label for="nome">Nome:</label>
+					<input type="text" id="nome" name="nome"><br>
 
-				<input type="submit" value="Enviar">
-			</form>
+					<label for="email">E-mail:</label>
+					<input type="email" id="email" name="email"><br>
+
+					<label for="senha">Senha:</label>
+					<input type="password" id="senha" name="senha"><br>
+
+					<input type="submit" value="Cadastrar">
+				</form>
+			</div>
+		</section>
+		<section id="login">
+			<div class="container">
+				<h2>Login</h2>
+				<form>
+					<label for="email">E-mail:</label>
+					<input type="email" id="email" name="email"><br>
+
+					<label for="senha">Senha:</label>
+					<input type="password" id="senha" name="senha"><br>
+
+					<input type="submit" value="Entrar">
+				</form>
+			</div>
+		</section>
+		<section id="chat">
+			<div class="container">
+				<h2>Chat Público</h2>
+				<div id="chatbox">
+					<p><strong>Usuário 1:</strong> Olá, tem alguém aí?</p>
+					<p><strong>Usuário 2:</strong> Sim, estou aqui!</p>
+					<p><strong>Usuário 3:</strong> Acabei de entrar, alguém quer jogar?</p>
+				</div>
+				<form>
+					<label for="mensagem">Mensagem:</label>
+					<input type="text" id="mensagem" name="mensagem"><br>
+
+					<input type="submit" value="Enviar">
+				</form>
+			</div>
 		</section>
 	</main>
 	<footer>
-		<p>Comunidade de RPG &copy; 2023</p>
-	</footer>
-</body>
-</html>
+		<div class="container">
+			<p>Comunidade de RPG &copy; 2023</p>
+	
