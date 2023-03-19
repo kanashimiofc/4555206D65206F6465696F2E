@@ -1,90 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contagem regressiva</title>
+	<title>Gnomo Sonoro</title>
 	<style>
-		body {
-			background-color: #F2F2F2;
-			color: #fff;
-			font-family: "Press Start 2P", cursive;
-			font-size: 10rem;
-			text-align: center;
-			padding-top: 10%;
-		}
-		
-		nav {
-			background-color: #333;
-			overflow: hidden;
-		}
-
-		nav ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			display: inline-block;
-			float: left;
-		}
-
-		nav li {
-			float: left;
-		}
-
-		nav a {
-			display: block;
-			color: white;
-			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
-		}
-
-		nav a:hover {
-			background-color: #ddd;
-			color: black;
-		}
-
-		.active {
-			background-color: #4CAF50;
-			color: white;
+		#gnomo {
+			width: 100px;
+			height: 100px;
+			background-image: url('gnomo.png');
+			background-size: contain;
+			cursor: pointer;
 		}
 	</style>
 </head>
 <body>
-	<nav>
-		<ul>
-			<li><a href="#" class="active">Que contagem?</a></li>
-			<li><a href="#">O que vai acontecer?</a></li>
-		</ul>
-	</nav>
+	<div id="gnomo"></div>
+	
+	<audio id="som">
+		<source src="som1.mp3" type="audio/mpeg">
+		<source src="som2.mp3" type="audio/mpeg">
+		<source src="som3.mp3" type="audio/mpeg">
+	</audio>
+
 	<script>
-		// Define a data final da contagem regressiva
-		var countDownDate = new Date("Mar 24, 2023 23:59:59").getTime();
+		var gnomo = document.getElementById("gnomo");
+		var som = document.getElementById("som");
 
-		// Atualiza a contagem a cada segundo
-		var x = setInterval(function() {
-
-			// Pega a data atual
-			var now = new Date().getTime();
-
-			// Calcula a diferença entre a data final e a data atual
-			var distance = countDownDate - now;
-
-			// Calcula dias, horas, minutos e segundos restantes
-			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-			// Exibe a contagem regressiva no elemento com ID "countdown"
-			document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-			+ minutes + "m " + seconds + "s ";
-
-			// Se a contagem regressiva terminou, exibe a mensagem final
-			if (distance < 0) {
-				clearInterval(x);
-				document.getElementById("countdown").innerHTML = "A contagem regressiva terminou!";
-			}
-		}, 1000);
+		gnomo.addEventListener("click", function() {
+			som.pause();
+			som.currentTime = 0;
+			som.play();
+		});
 	</script>
-	<div id="countdown"></div>
 </body>
 </html>
