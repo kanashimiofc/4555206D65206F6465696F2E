@@ -1,92 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chat Anônimo</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: 'Press Start 2P', cursive;
-      font-size: 16px;
-      line-height: 1.5;
-      margin: 0;
-      padding: 0;
-    }
-    
-    #chat-container {
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      justify-content: flex-end;
-      padding: 20px;
-    }
-    
-    #chat-box {
-      background-color: #222;
-      border-radius: 5px;
-      padding: 10px;
-      overflow-y: auto;
-      flex-grow: 1;
-      margin-bottom: 20px;
-    }
-    
-    #chat-input {
-      background-color: #222;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      font-family: 'Press Start 2P', cursive;
-      font-size: 16px;
-      height: 40px;
-      padding: 10px;
-      width: 100%;
-    }
-    
-    #chat-form {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    #chat-submit {
-      background-color: #555;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      cursor: pointer;
-      font-family: 'Press Start 2P', cursive;
-      font-size: 16px;
-      height: 40px;
-      margin-top: 10px;
-    }
-  </style>
+  <title>Minha Roleta Twitch</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="roleta.css">
+  <script src="roleta.js"></script>
 </head>
 <body>
-  <div id="chat-container">
-    <div id="chat-box"></div>
-    <form id="chat-form">
-      <input type="text" id="chat-input" placeholder="Digite sua mensagem">
-      <button type="submit" id="chat-submit">Enviar</button>
-    </form>
-  </div>
+  <h1>Minha Roleta Twitch</h1>
   
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
+  <div id="roleta">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+  </div>
+
+  <button id="spin-button" onclick="roulette.spin()">Girar</button>
+
+  <div id="resultado-roleta"></div>
+
+  <div id="chat-twitch"></div>
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
   <script>
-    const socket = io();
-    const chatBox = $('#chat-box');
-    const chatInput = $('#chat-input');
-    const chatForm = $('#chat-form');
-    
-    chatForm.on('submit', (event) => {
-      event.preventDefault();
-      const message = chatInput.val();
-      socket.emit('chat-message', message);
-      chatInput.val('');
-    });
-    
-    socket.on('chat-message', (message) => {
-      const messageElement = $('<div>').text(message);
-      chatBox.append(messageElement);
+    new Twitch.Embed("chat-twitch", {
+      width: 400,
+      height: 300,
+      channel: "nomedoseucanal",
+      parent: ["nomedoseudominio.com"]
     });
   </script>
 </body>
