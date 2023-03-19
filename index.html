@@ -1,35 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Gnomo Sonoro</title>
-	<style>
-		#gnomo {
-			width: 100px;
-			height: 100px;
-			background-image: url('gnomo.png');
-			background-size: contain;
-			cursor: pointer;
-		}
-	</style>
-</head>
-<body>
-	<div id="gnomo"></div>
-	
-	<audio id="som">
-		<source src="som1.mp3" type="audio/mpeg">
-		<source src="som2.mp3" type="audio/mpeg">
-		<source src="som3.mp3" type="audio/mpeg">
-	</audio>
+  <head>
+    <title>Animes News</title>
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+      }
 
-	<script>
-		var gnomo = document.getElementById("gnomo");
-		var som = document.getElementById("som");
+      #header {
+        background-color: #1c1c1c;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
 
-		gnomo.addEventListener("click", function() {
-			som.pause();
-			som.currentTime = 0;
-			som.play();
-		});
-	</script>
-</body>
+      #noticias {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+      }
+
+      .noticia {
+        width: 30%;
+        margin-bottom: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px #888888;
+        overflow: hidden;
+      }
+
+      .noticia img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .noticia h2 {
+        margin: 10px;
+        font-size: 24px;
+      }
+
+      .noticia p {
+        margin: 10px;
+        font-size: 16px;
+        text-align: justify;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Animes News</h1>
+    </div>
+
+    <div id="noticias">
+      <div class="noticia">
+        <img src="anime1.png" alt="Anime 1">
+        <h2>Notícia 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit, magna et rhoncus pharetra, nisi ipsum posuere erat, vel rutrum turpis libero ac libero. Fusce imperdiet sapien vel augue consequat, et tincidunt felis finibus.</p>
+      </div>
+
+      <div class="noticia">
+        <img src="anime2.png" alt="Anime 2">
+        <h2>Notícia 2</h2>
+        <p>Nullam aliquet eros nec sapien feugiat, at blandit risus tempor. Integer ac ante tincidunt, auctor velit vitae, maximus enim. Praesent commodo dui ac orci tincidunt, non imperdiet dolor semper.</p>
+      </div>
+
+      <div class="noticia">
+        <img src="anime3.png" alt="Anime 3">
+        <h2>Notícia 3</h2>
+        <p>Mauris laoreet nulla eu leo maximus, at venenatis velit accumsan. Sed eu mi eget velit eleifend molestie vitae vel enim. Praesent efficitur ex id ipsum congue, a lacinia elit rhoncus.</p>
+      </div>
+
+      <!-- Adicione mais notícias conforme necessário -->
+    </div>
+  </body>
 </html>
