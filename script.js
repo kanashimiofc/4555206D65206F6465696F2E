@@ -1,44 +1,57 @@
-body {
-    background-color: black;
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
+const player = document.querySelector('.player');
+const enemy = document.querySelector('.enemy');
+const scoreElement = document.querySelector('.score');
+let score = 0;
+
+function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
 }
 
-h1 {
-    text-align: center;
+function moveEnemy() {
+    let target = getRandom(0, 90);
+    let time = getRandom(2000, 5000);
+
+    enemy.style.bottom = target + '%';
+
+    setTimeout(moveEnemy, time);
 }
 
-.game {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    max-width: 800px;
-    max-height: 400px;
-    margin: 0 auto;
+function checkCollision() {
+    let playerRect = player.getBoundingClientRect();
+    let enemyRect = enemy.getBoundingClientRect();
+
+    if (playerRect.bottom < enemyRect.top || playerRect.top > enemyRect.bottom || playerRect.right < enemyRect.left || playerRect.left > enemyRect.right) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
-.player {
-    position: absolute;
-    width: 10%;
-    height: 10%;
-    left: 5%;
-    bottom: 5%;
-    background-color: white;
+function startGame() {
+    moveEnemy();
+
+    setInterval(() => {
+        if (checkCollision()) {
+            alert('Você perdeu!');
+            location.reload();
+        }
+
+        score++;
+        scoreElement.textContent = score;
+    }, 1000 / 60);
 }
 
-.enemy {
-    position: absolute;
-    width: 10%;
-    height: 10%;
-    right: 5%;
-    bottom: 5%;
-    background-color: red;
-}
+startGame();
 
-.score {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-}
+document.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    let touchY = event.touches[0].clientY;
+
+    document.addEventListener('touchmove', (event) => {
+event.preventDefault();
+let deltaY = touchY - event.touches[0].clientY;
+    player.style.bottom = parseFloat(player.style.bottom) + deltaY / window.innerHeight * 100 + '%';
+
+    touchY = event.touches[0].clientY;
+});
+
