@@ -1,101 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Novo Mundo Pós-Apocalíptico</title>
-	<style>
-		body {
-			background-color: #222222;
-			color: white;
-			font-family: 'Press Start 2P', cursive;
-			font-size: 20px;
-			padding: 30px;
-		}
-		h1 {
-			font-size: 50px;
-			text-align: center;
-			margin-bottom: 50px;
-		}
-		p {
-			margin-bottom: 20px;
-		}
-		.tabs {
-			border-bottom: 1px solid white;
-			margin-bottom: 20px;
-		}
-		.tab {
-			margin-right: 10px;
-			padding: 10px;
-			cursor: pointer;
-		}
-		.tab.active {
-			border-bottom: 2px solid white;
-		}
-		.tabpanel {
-			display: none;
-		}
-		.tabpanel.active {
-			display: block;
-		}
-	</style>
-	<link href="<https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap>" rel="stylesheet">
-</head>
-<body>
-	<h1>Novo Mundo Pós-Apocalíptico</h1>
-	<div class="tabs">
-		<div class="tab active" onclick="openTab(event, 'tab1')">Sobre</div>
-		<div class="tab" onclick="openTab(event, 'tab2')">Personagens</div>
-		<div class="tab" onclick="openTab(event, 'tab3')">Contato</div>
-	</div>
-	<div class="tabpanels">
-		<div class="tabpanel active" id="tab1">
-			<p>Bem-vindo ao novo mundo. Um mundo repleto de perigos e desafios, mas também cheio de oportunidades. Em um futuro próximo, uma grande catástrofe se abateu sobre a humanidade, deixando o mundo em ruínas. Mas, como sempre, a humanidade sobreviveu e agora começa a reconstruir sua civilização.</p>
-			<p>Neste mundo, você encontrará criaturas mutantes, cultos fanáticos e gangues violentas, mas também encontrará aliados e amigos que o ajudarão em sua jornada. Explore as ruínas das cidades, enfrente os perigos do deserto e descubra os segredos deste novo mundo.</p>
-			<p>Esteja preparado para lutar por sua sobrevivência e para ajudar a reconstruir a civilização. O futuro do mundo está em suas mãos.</p>
-		</div>
-		<div class="tabpanel" id="tab2">
-			<p>Conheça os personagens que habitam este mundo:</p>
-			<ul>
-				<li>João - Um ex-soldado que agora lidera um grupo de sobreviventes.</li>
-				<li>Maria - Uma médica que dedica sua vida a ajudar os necessitados.</li>
-				<li>Lucas - Um comerciante que troca mantimentos por itens raros.</li>
-				<li>Clara - Uma sobrevivente que perdeu tudo e agora busca vingança contra os responsáveis pela catástrofe.</li>
-				<li>Tom - Um engenheiro que busca recriar a tecnologia perdida.</li>
-			</ul>
-		</div>
-		<div class="tabpanel" id="tab3">
-			<p>Entre em contato conosco para saber mais:</p>
-			<form>
-				<label for="name">Nome:</label>
-				<input type="text" id="name" name="name">
-
-
-				<label for="email">E-mail:</label>
-				<input type="email" id="email" name="email">
-
-
-				<label for="message">Mensagem:</label>
-
-				<textarea id="message" name="message"></textarea>
-
-
-				<input type="submit" value="Enviar">
-			</form>
-		</div>
-	</div>
-	<script>
-		function openTab(evt, tabName) {
-			var i, tabcontent, tablinks;
-			tabcontent = document.getElementsByClassName("tabpanel");
-			for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].className = tabcontent[i].className.replace(" active", "");
-			}
-			tablinks = document.getElementsByClassName("tab");
-			for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" active", "");
-			}
-			document.getElementById(tabName).className += " active";
-			evt.currentTarget.className += " active";
-		}
-	</script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>RPG Adventure</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>RPG Adventure</h1>
+      <p>Bem-vindo(a) à sua aventura! Escolha o seu caminho e explore o mundo mágico.</p>
+      <button> Começar a Jogar</button>
+    </div>
+  </body>
 </html>
