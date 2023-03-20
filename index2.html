@@ -2,24 +2,31 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Página Misteriosa</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <title>別のパスワードを入力してください</title>
+    <style>
+      body {
+        background-color: black;
+        font-family: 'Pixel', sans-serif;
+        color: white;
+        text-align: center;
+        margin-top: 100px;
+      }
+      #senha {
+        width: 300px;
+        height: 30px;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <h1>A noite estava escura e silenciosa. Apenas o som dos galhos das árvores balançando ao vento quebrava o silêncio. Emily caminhava sozinha pela estrada deserta, ansiosa para chegar em casa e se livrar daquele ar sombrio.
-
-Mas algo estava errado. Ela sentia que estava sendo seguida. Quando se virou para ver se havia alguém atrás dela, tudo o que viu foi uma figura escura desaparecendo entre as árvores. Seu coração acelerou e ela começou a correr, mas seus pés pareciam pesados como chumbo.
-
-Finalmente, ela chegou à sua casa. Estava segura. Ou pelo menos era isso que ela pensava. Ao entrar, viu que sua casa estava bagunçada, como se alguém tivesse revirado tudo. O que estava acontecendo? Quem havia entrado em sua casa?
-
-Emily andou pela casa, examinando cada canto. Foi então que notou um papel dobrado em cima da mesa da cozinha. Ela abriu o papel e viu um anagrama escrito a mão:
-
-"Re: Temor."</h1>
-      <p>Resposta</p>
-      <img src="img2.jpg" alt="Morte">
-      <button onclick="window.location.href='index.html'">Voltar para a página anterior</button>
-    </div>
+    <h1>Senha</h1>
+    <p>Insira a outra senha:</p>
+    <form action="index2.php">
+      <input type="password" id="senha" name="senha">
+      <br>
+      <input type="submit" value="Enviar">
+    </form>
+    <p>"No início, eu só queria me divertir, mas depois eu vi toda a corrupção desse lugar. Ela me corroeu e me fez piorar esse lugar."</p>
   </body>
 </html>
