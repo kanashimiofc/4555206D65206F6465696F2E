@@ -23,7 +23,7 @@
     <?php
       $senha_correta = "250423";
       if (isset($_POST["senha"]) && $_POST["senha"] == $senha_correta) {
-        header("Location: outra_pagina.php");
+        header("Location: index.php");
         exit();
       } elseif (isset($_POST["senha"])) {
         echo "<p>Senha incorreta. Tente novamente.</p>";
