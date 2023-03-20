@@ -1,33 +1,64 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Anagrama - História de Fundo</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div class="background">
-		<div class="container">
-			<h1>Anagrama - História de Fundo</h1>
-			<p>Essa é a história de um jovem aventureiro que se perdeu em uma floresta densa e escura. Depois de horas de caminhada, ele finalmente encontrou uma pequena clareira com uma cabana antiga. O jovem entrou na cabana e encontrou um velho livro em uma prateleira empoeirada.</p>
-			<p>O livro estava escrito em um idioma desconhecido, mas o jovem notou que as palavras pareciam estar embaralhadas. Ele percebeu que era um anagrama e começou a decifrá-lo. Depois de alguns minutos, o jovem finalmente desvendou a mensagem: "Saia daqui imediatamente".</p>
-			<form>
-				<label for="resposta">Digite a resposta:</label>
-				<input type="text" id="resposta" name="resposta">
-				<button type="submit" onclick="verificarResposta()">Verificar</button>
-			</form>
-			<div id="mensagem"></div>
-		</div>
-	</div>
-<script>
-	function verificarResposta() {
-		var resposta = document.getElementById("resposta").value;
-		if (resposta.toLowerCase() === "saia daqui imediatamente") {
-			document.getElementById("mensagem").innerHTML = "Parabéns, você acertou! Redirecionando para a próxima página...";
-			window.location.href = "proxima_pagina.html";
-		} else {
-			document.getElementById("mensagem").innerHTML = "Ops, resposta incorreta. Tente novamente.";
-		}
-	}
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Site de Senha</title>
+    <style>
+      body {
+        background-color: black;
+        font-family: 'Pixel', sans-serif;
+        color: white;
+        text-align: center;
+        margin-top: 100px;
+      }
+      #senha {
+        width: 300px;
+        height: 30px;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Senha</h1>
+    <p>Insira a senha:</p>
+    <form action="outra_pagina.html">
+      <input type="password" id="senha" name="senha">
+      <br>
+      <input type="submit" value="Enviar">
+    </form>
+  </body>
+</html>
+<!-- Código para a outra página -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Site de Senha</title>
+    <style>
+      body {
+        background-color: black;
+        font-family: 'Pixel', sans-serif;
+        color: white;
+        text-align: center;
+        margin-top: 100px;
+      }
+      #senha {
+        width: 300px;
+        height: 30px;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Senha</h1>
+    <p>Insira a outra senha:</p>
+    <form action="outra_pagina2.html">
+      <input type="password" id="senha" name="senha">
+      <br>
+      <input type="submit" value="Enviar">
+    </form>
+    <p>"No início, eu só queria me divertir, mas depois eu vi toda a corrupção desse lugar. Ela me corroeu e me fez piorar esse lugar."</p>
+  </body>
 </html>
