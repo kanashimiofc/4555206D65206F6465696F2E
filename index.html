@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Site de Senha</title>
+    <title>パスワードを入力してください</title>
     <style>
       body {
         background-color: black;
@@ -20,9 +20,18 @@
     </style>
   </head>
   <body>
+    <?php
+      $senha_correta = "250423";
+      if (isset($_POST["senha"]) && $_POST["senha"] == $senha_correta) {
+        header("Location: outra_pagina.php");
+        exit();
+      } elseif (isset($_POST["senha"])) {
+        echo "<p>Senha incorreta. Tente novamente.</p>";
+      }
+    ?>
     <h1>Senha</h1>
     <p>Insira a senha:</p>
-    <form action="index2.html">
+    <form method="post">
       <input type="password" id="senha" name="senha">
       <br>
       <input type="submit" value="Enviar">
