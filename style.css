@@ -1,64 +1,141 @@
 /* Define fontes */
-@font-face {
-  font-family: 'Pixel';
-  src: url('pixel-font.woff2') format('woff2'),
-       url('pixel-font.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 /* Define estilos globais */
 body {
-  font-family: 'Pixel', sans-serif;
-  margin: 0;
-  padding: 0;
+    background-color: #ffcaaf;
+    font-family: 'Roboto', sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
 }
 
-/* Define estilos para a página de senha */
-body.senha {
-  background-color: black;
-  color: white;
-  text-align: center;
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Define estilos para o cabeçalho */
+header {
+    background-color: #f2b2a8;
+    padding: 20px;
 }
 
 h1 {
-  font-size: 3em;
-  margin-top: 50px;
-  margin-bottom: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 4em;
+    margin: 0;
 }
 
-p {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+/* Define estilos para o gif do gato */
+#cat-gif {
+    text-align: center;
+    margin-top: 50px;
 }
 
-input[type=password] {
-  width: 300px;
-  height: 30px;
-  font-size: 20px;
-  margin-bottom: 20px;
+/* Define estilos para o conteúdo principal */
+main {
+    padding: 50px;
 }
 
-input[type=submit] {
-  background-color: white;
-  color: black;
-  font-size: 1.5em;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
 }
 
-/* Define estilos para a página de frase */
-body.frase {
-  background-color: white;
-  color: black;
-  text-align: center;
+/* Define estilos para o rodapé */
+footer {
+    background-color: #f2b2a8;
+    padding: 20px;
+    text-align: center;
 }
 
-blockquote {
-  font-size: 2em;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  font-style: italic;
+/* Define estilos para a imagem de fundo */
+body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
 }
+
+/* Define estilos para o link ativo */
+li a:hover, li a:active {
+    color: #f2b2a8;
+}
+
+/* Define estilos para o botão */
+button {
+    background-color: #f2b2a8;
+    color: #222;
+    font-size: 2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Define estilos para a caixa de senha */
+#password-input {
+width: 200px;
+height: 30px;
+padding: 5px;
+font-size: 1.5em;
+border-radius: 5px;
+border: none;
+margin-bottom: 20px;
+}
+
+/* Define estilos para a mensagem de erro */
+#error-message {
+color: red;
+margin-bottom: 20px;
+}
+
+/* Define estilos para a página de sucesso */
+#success-page {
+text-align: center;
+padding: 50px;
+}
+
+/* Define estilos para a frase */
+#success-page p {
+font-size: 2em;
+margin-bottom: 30px;
+}
+
+/* Define estilos para o som de fundo */
+#audio-player {
+display: none;
+}
+app.js:
+// Toca o som de ronronar quando a página carrega
+document.addEventListener('DOMContentLoaded', function() {
+document.getElementById('audio-player').play();
+});
+
+// Verifica a senha quando o formulário é enviado
+document.getElementById('password-form').addEventListener('submit', function(event) {
+var passwordInput = document.getElementById('password-input');
+var errorMessage = document.getElementById('error-message');
+if (passwordInput.value !== '250423') {
+    errorMessage.textContent = 'Senha incorreta! Tente novamente.';
+    event.preventDefault();
+}
+});
+
+// Toca o som de ronronar em loop
+var audio = document.getElementById('purr-sound');
+audio.play();
