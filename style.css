@@ -1,141 +1,101 @@
-/* Define fontes */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
-/* Define estilos globais */
 body {
-    background-color: #ffcaaf;
-    font-family: 'Roboto', sans-serif;
-    color: #222;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-a {
-    color: #222;
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-/* Define estilos para o cabeçalho */
 header {
-    background-color: #f2b2a8;
-    padding: 20px;
+  background-color: #e6e6e6;
+  padding: 20px;
 }
 
 h1 {
-    font-family: 'Lobster', cursive;
-    font-size: 4em;
-    margin: 0;
+  margin: 0;
 }
 
-/* Define estilos para o gif do gato */
-#cat-gif {
-    text-align: center;
-    margin-top: 50px;
+nav {
+  background-color: #333;
+  color: #fff;
 }
 
-/* Define estilos para o conteúdo principal */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
 main {
-    padding: 50px;
+  padding: 20px;
 }
 
-h2 {
-    font-size: 3em;
-    margin-bottom: 30px;
+section {
+  margin: 20px 0;
 }
 
-/* Define estilos para o rodapé */
+section h2 {
+  margin: 0;
+}
+
+article {
+  margin: 20px 0;
+}
+
+article h3 {
+  margin: 0;
+}
+
+article p {
+  margin: 10px 0;
+}
+
+article img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item {
+  width: 30%;
+  margin: 1%;
+  float: left;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 footer {
-    background-color: #f2b2a8;
-    padding: 20px;
-    text-align: center;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
 }
 
-/* Define estilos para a imagem de fundo */
-body:before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url('background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.5;
+footer p {
+  margin: 0;
 }
-
-/* Define estilos para o link ativo */
-li a:hover, li a:active {
-    color: #f2b2a8;
-}
-
-/* Define estilos para o botão */
-button {
-    background-color: #f2b2a8;
-    color: #222;
-    font-size: 2em;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Define estilos para a caixa de senha */
-#password-input {
-width: 200px;
-height: 30px;
-padding: 5px;
-font-size: 1.5em;
-border-radius: 5px;
-border: none;
-margin-bottom: 20px;
-}
-
-/* Define estilos para a mensagem de erro */
-#error-message {
-color: red;
-margin-bottom: 20px;
-}
-
-/* Define estilos para a página de sucesso */
-#success-page {
-text-align: center;
-padding: 50px;
-}
-
-/* Define estilos para a frase */
-#success-page p {
-font-size: 2em;
-margin-bottom: 30px;
-}
-
-/* Define estilos para o som de fundo */
-#audio-player {
-display: none;
-}
-app.js:
-// Toca o som de ronronar quando a página carrega
-document.addEventListener('DOMContentLoaded', function() {
-document.getElementById('audio-player').play();
-});
-
-// Verifica a senha quando o formulário é enviado
-document.getElementById('password-form').addEventListener('submit', function(event) {
-var passwordInput = document.getElementById('password-input');
-var errorMessage = document.getElementById('error-message');
-if (passwordInput.value !== '250423') {
-    errorMessage.textContent = 'Senha incorreta! Tente novamente.';
-    event.preventDefault();
-}
-});
-
-// Toca o som de ronronar em loop
-var audio = document.getElementById('purr-sound');
-audio.play();
